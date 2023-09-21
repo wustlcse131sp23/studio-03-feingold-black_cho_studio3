@@ -9,12 +9,12 @@ public class Sieve {
 		System.out.println("What is n?");
 		int n = in.nextInt();
 		
-		boolean[] numbers = new boolean[n+1];
-		
-		for (int i=0;i<numbers.length;i++) {
+		boolean[] numbers = new boolean[n];
+		//initialize i to 2 because 0 and 1 are not prime
+		for (int i=2;i<numbers.length;i++) {
 			numbers[i]=true;
 		}
-		for(int factor = 2; factor< sqrt(n); factor++) {
+		for(int factor = 2; factor< Math.pow(n,.5); factor++) {
 			for (int multiple=factor*2; multiple<numbers.length; multiple+=factor) {
 				numbers[multiple]=false;
 			}
