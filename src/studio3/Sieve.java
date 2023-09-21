@@ -14,7 +14,7 @@ public class Sieve {
 		for (int i=0;i<numbers.length;i++) {
 			numbers[i]=true;
 		}
-		for(int factor = 2; factor< numbers.length /2; factor++) {
+		for(int factor = 2; factor< sqrt(n); factor++) {
 			for (int multiple=factor*2; multiple<numbers.length; multiple+=factor) {
 				numbers[multiple]=false;
 			}
